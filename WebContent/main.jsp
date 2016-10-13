@@ -28,7 +28,7 @@
 <head>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<title>UniTime <%=Constants.VERSION%>| University Timetabling Application</title>
+	<title>MTS <%=Constants.VERSION%>| Majors Timetable Scheduling</title>
 	<link rel="shortcut icon" href="images/timetabling.ico" />
 	<link type="text/css" rel="stylesheet" href="unitime/gwt/standard/standard.css">
     <link type="text/css" rel="stylesheet" href="styles/unitime.css">
@@ -93,7 +93,7 @@
 				<tt:form-factor value="phone"><img src="images/unitime-phone.png" border="0"/></tt:form-factor>
 				<tt:form-factor value="tablet"><img src="images/unitime-tablet.png" border="0"/></tt:form-factor>
 			</a></span>
-			<span id='UniTimeGWT:Title' class="title">University Timetabling Application</span>
+			<span id='UniTimeGWT:Title' class="title">Majors Timetable Scheduling</span>
 		</span>
 	</span>
 	<span class='unitime-MobileHeader'><span id='UniTimeGWT:Header' class="unitime-InfoPanel"></span></span>
@@ -169,9 +169,9 @@
     <span class='main'><span class='body' id="unitime-Page" style="background-image:url('images/logofaded.jpg');backbackground-repeat:no-repeat;background-position: center;">
     	<span class="unitime-PageHeader" id="unitime-Header">
     		<span class="row">
-    			<span class="logo"><a href='http://www.unitime.org' tabIndex="-1"><img src="images/unitime.png" border="0"/></a></span>
+    			<span class="logo"><a href='http://www.unitime.org' tabIndex="-1"><img src="images/unitime.png" border="0" width=140; height=80;/></a></span>
     			<span class="content">
-					<span id='UniTimeGWT:Title' class="title">University Timetabling Application</span>
+					<span id='UniTimeGWT:Title' class="title">Majors Timetable Scheduling</span>
 					<span class='unitime-Header'><span id='UniTimeGWT:Header' class="unitime-InfoPanel"></span></span>
 				</span>
 			</span>
@@ -190,7 +190,8 @@
 			</span>
 		</tt:registration>
 	</span>
-    </span><span class='footer' id="unitime-Footer">
+    </span>
+   <span class='footer' id="unitime-Footer">
 		<span class="unitime-Footer">
 			<span class="row">
 				<span class="cell left">
@@ -205,7 +206,7 @@
 		<tt:hasProperty name="tmtbl.page.disclaimer">
 			<span class='unitime-Disclaimer'><tt:property name="tmtbl.page.disclaimer"/></span>
 		</tt:hasProperty>
-	</span>
+	</span> 
 </span></span></span>
 	
 </tt:form-factor>

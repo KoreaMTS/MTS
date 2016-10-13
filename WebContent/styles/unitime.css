@@ -3497,6 +3497,7 @@ unitime-RoomSharingWidget .legend .blank {
 .unitime-PageHeader {
 	display: table;
 	width: 100%;
+
 }
 
 .unitime-PageHeader .row {
@@ -3599,6 +3600,11 @@ unitime-RoomSharingWidget .legend .blank {
 .unitime-Login .login {
 	display: block;
 	padding: 10px 0px 10px 0px;
+	border:4px dashed #ccc;
+	width:400px;
+	height:200px;
+	margin: auto;
+
 }
 
 .unitime-Login .forgot {

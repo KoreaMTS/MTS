@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="JavaSource"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
-	
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/activation-1.1.jar" sourcepath="3rd_party/sources/activation-1.1-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-beanutils-1.8.0.jar" sourcepath="3rd_party/sources/commons-beanutils-1.8.0-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/commons-chain-1.2.jar" sourcepath="3rd_party/sources/commons-chain-1.2-sources.jar"/>
@@ -89,15 +87,9 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mgwt-2.0.0.jar" sourcepath="3rd_party/sources/mgwt-2.0.0-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/biweekly-0.4.3.jar" sourcepath="3rd_party/sources/biweekly-0.4.3-sources.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/jackson-core-2.6.1.jar" sourcepath="3rd_party/sources/jackson-core-2.6.1-sources.jar"/>
-	
 	<classpathentry kind="lib" path="3rd_party/ant-1.8.4.jar" sourcepath="3rd_party/sources/ant-1.8.4-sources.jar"/>
-	<!-- 
-	<classpathentry kind="lib" path="3rd_party/gwt-dev-2.7.0.jar" sourcepath="3rd_party/sources/gwt-dev-2.7.0-sources.jar"/>
-	<classpathentry kind="lib" path="3rd_party/gwt-user-2.7.0.jar" sourcepath="3rd_party/sources/gwt-user-2.7.0-sources.jar"/>
-	<classpathentry kind="lib" path="3rd_party/jsp-api-2.2.jar" sourcepath="3rd_party/sources/jsp-api-2.2-sources.jar"/>
-	<classpathentry kind="lib" path="3rd_party/javax.servlet-api-3.0.1.jar" sourcepath="3rd_party/sources/javax.servlet-api-3.0.1-sources.jar"/>
-	<classpathentry kind="lib" path="3rd_party/validation-api-1.0.0.GA.jar" sourcepath="3rd_party/sources/validation-api-1.0.0.GA-sources.jar"/>
-	 -->
-	
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files/Apache Software Foundation/Tomcat 7.0/lib/servlet-api.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>

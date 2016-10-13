@@ -1393,16 +1393,16 @@ div.suggestionList_element_on {
 
 /* Login Page */
 
-#login .BrownBG {
+#login .BackGround {
 	height: 140px;
-	background: url(../images/login_bg.jpg) no-repeat scroll left top;
+	background: no-repeat scroll left top;
 	width: 354px;
 	margin-left: auto;
 	margin-right: auto;
 }
 #login label {
 	font: bold 15px Verdana, Arial, Helvetica, sans-serif;
-	color: #FFFFFF;
+	color: black;
 	width: 150px;
 	float: left;
 	text-align: right;
