@@ -31,7 +31,8 @@
 <%
 try {
 %>
-	<script language="JavaScript">blToggleHeader('Filter','dispFilter');blStart('dispFilter');</script>
+
+<%--<script language="JavaScript">blToggleHeader('Filter','dispFilter');blStart('dispFilter');</script> --%>	
 	<TABLE width="100%" border="0" cellspacing="0" cellpadding="3">
 		<TR>
 			<TD>Week:</TD>
@@ -49,6 +50,16 @@ try {
 				</html:select>
 			</TD>
 		</TR>
+		
+		<TR>
+			<TD>Display Mode:</TD>
+			<TD>
+				<html:select property="dispMode">
+					<html:options name="timetableForm" property="dispModes"/>
+				</html:select>
+			</TD>
+		</TR>
+		<%--
 		<TR>
 			<TD>Filter:</TD>
 			<TD>
@@ -71,14 +82,7 @@ try {
 				</html:select>
 			</TD>
 		</TR>
-		<TR>
-			<TD>Display Mode:</TD>
-			<TD>
-				<html:select property="dispMode">
-					<html:options name="timetableForm" property="dispModes"/>
-				</html:select>
-			</TD>
-		</TR>
+		
 		<TR>
 			<TD>Background:</TD>
 			<TD>
@@ -125,6 +129,7 @@ try {
 				</html:select>
 			</TD>
 		</TR>
+		 --%>
 		<TR>
 			<TD colspan='2' align='right'>
 				<html:submit onclick="displayLoading();" property="op" value="Change"/>

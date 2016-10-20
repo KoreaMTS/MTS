@@ -80,7 +80,7 @@ public abstract class TimetableGridModel implements Serializable {
 		"Too Big Rooms"
 	};
 	public static String[] sResourceTypes = new String[] {
-		"Room", "Instructor", "Department", "Curriculum", "Subject Area"
+		"강의실", "교수", "Department", "Curriculum", "Subject Area"
 	};
 	
 	

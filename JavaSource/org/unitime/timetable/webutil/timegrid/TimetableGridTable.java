@@ -194,7 +194,7 @@ public class TimetableGridTable {
 	protected int iFirstDay = 0;
 	public Vector getWeeks(SessionContext context) throws Exception {
 		Vector weeks = new Vector();
-		weeks.addElement(new IdValue(new Long(-100),"All weeks"));
+		weeks.addElement(new IdValue(new Long(-100),"학기 전체기간"));
         Session session = SessionDAO.getInstance().get(context.getUser().getCurrentAcademicSessionId());
 		int startWeek = DateUtils.getWeek(session.getSessionBeginDateTime()) - ApplicationProperty.SessionNrExcessDays.intValue()/7;
 		Calendar endCal = Calendar.getInstance(Locale.US);
