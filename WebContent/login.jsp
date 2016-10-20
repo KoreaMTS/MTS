@@ -38,7 +38,7 @@
 <link rel="shortcut icon" href="images/timetabling.ico" />
 <script type="text/javascript" language="javascript"
 	src="unitime/unitime.nocache.js"></script>
-<TITLE>UniTime <%=Constants.VERSION%></TITLE>
+<TITLE>MTS <%=Constants.VERSION%></TITLE>
 </HEAD>
 <BODY class="bodyMain" onload="document.forms[0].j_username.focus();">
 	<tt:form-factor value="unknown">
@@ -131,19 +131,20 @@
 
 	<%@ include file="/initializationError.jspf"%>
 
-	<!--  	<span class="unitime-Footer">
+	  	<span class="unitime-Footer">
 			<span class="row">
 				<span class="cell middle">
-					<span id='UniTimeGWT:Version'></span>
-					<tt:copy br="false"/>
+				<span id='UniTimeGWT:Version'></span> 
+					<tt:copy br="true"/>
 				</span>
 			</span>
 		</span>
-		-->
+		
 	<tt:hasProperty name="tmtbl.page.disclaimer">
 		<span class='unitime-Disclaimer'><tt:property
 				name="tmtbl.page.disclaimer" /></span>
 	</tt:hasProperty>
+
 
 
 	<% if (ApplicationProperties.getProperty("tmtbl.footer.external", "").trim().length()>0) { %>

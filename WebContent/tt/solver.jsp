@@ -20,7 +20,7 @@
 <%@page import="org.unitime.timetable.security.rights.Right"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="org.unitime.timetable.security.SessionContext"%>
-<%@ page language="java" autoFlush="true"%>
+<%@ page language="java" autoFlush="true" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="org.unitime.timetable.solver.WebSolver" %>
 <%@ page import="org.unitime.timetable.solver.SolverProxy" %>
@@ -49,7 +49,7 @@
 		function confirmUnload() {
 			if (jsConfirm!=null && !jsConfirm) return;
 
-			if (!confirm('Do you really want to unload your current timetable? You may lose this timetable if you did not save it.')) {
+			if (!confirm('당신의 현재 시간표를 언로드 하시겠습니까? 저장하지 않았다면 이를 잃을 수 있습니다.')) {
 				solverForm.confirm.value='n';
 			}
 		}
@@ -57,7 +57,7 @@
 		function confirmSave() {
 			if (jsConfirm!=null && !jsConfirm) return;
 
-			if (!confirm('Do you really want to save your current timetable? This will overwrite your previous solution.')) {
+			if (!confirm('당신의 현재 시간표를 저장하시겠습니까?')) {
 				solverForm.confirm.value='n';
 			}
 		}
@@ -65,7 +65,7 @@
 		function confirmSaveAsNew() {
 			if (jsConfirm!=null && !jsConfirm) return;
 
-			if (!confirm('Do you really want to save your current timetable?')) {
+			if (!confirm('당신의 현재 시간표를 저장하시겠습니까?')) {
 				solverForm.confirm.value='n';
 			}
 		}
@@ -114,84 +114,107 @@ try {
 	if (status==null)
 		status = "Solver not started.";
 %>
-<TABLE width="100%" border="0" cellspacing="0" cellpadding="3">
-	<TR>
-		<TD colspan="2">
-			<DIV class="WelcomeRowHead">
-			Solver
-			</DIV>
-		</TD>
-	</TR>
-<%
+	<TABLE width="100%" border="0" cellspacing="0" cellpadding="3">
+		<TR>
+			<TD colspan="2">
+				<DIV class="WelcomeRowHead">해당 학기 시간표 짜기</DIV>
+			</TD>
+		</TR>
+		<%
 	if (solver!=null && solver.getLoadedDate()!=null) {
 %>
-		<TR><TD>Input data loaded:</TD><TD><%=WebSolver.sDF.format(solver.getLoadedDate())%></TD></TR>
-<%
+		<TR>
+			<TD>데이터 로드 시간:</TD>
+			<TD><%=WebSolver.sDF.format(solver.getLoadedDate())%></TD>
+		</TR>
+		<%
 	}
 %>
-	<TR><TD>Status:</TD><TD><%=status%> <tt:wiki>Solver Status</tt:wiki></TD></TR>
+		<TR>
+			<TD>현재 상태:</TD>
+			<TD><%=status%> <tt:wiki>Solver Status</tt:wiki></TD>
+		</TR>
+
+		<%-- 
 <%  if (progress!=null) { %>
 		<TR><TD>Progress:</TD><TD><%=progress%></TD></TR>
 <%  } %>
-<%  
-	boolean disabled = (solver!=null && solver.isWorking());
-%>
-   	<TR><TD>Solver configuration:</TD>
-		<TD>
-			<html:select property="setting" onchange="submit();" disabled="<%=disabled%>">
-				<html:optionsCollection name="solverForm" property="settings" label="value" value="id"/>
-			</html:select>
-			&nbsp;<html:errors property="setting"/>
-		</TD>
-	</TR>
-	<logic:iterate id="parameter" name="solverForm" property="parameters" type="org.unitime.timetable.model.SolverPredefinedSetting.IdValue">
-		<TR>
-			<TD><bean:write name="parameter" property="value"/>:</TD>
-			<TD>
-			<logic:equal name="parameter" property="type" value="boolean">
-				<html:checkbox property='<%= "parameterValue["+parameter.getId()+"]"%>' disabled="<%=disabled || parameter.getDisabled()%>"/>
-  				&nbsp;<html:errors property='<%= "parameterValue["+parameter.getId()+"]"%>'/>
-			</logic:equal>
-			<% if (parameter.getType().startsWith("enum(") && parameter.getType().endsWith(")")) { %>
-				<html:select property='<%="parameterValue["+parameter.getId()+"]"%>' disabled="<%=disabled || parameter.getDisabled()%>">
-					<html:options property='<%=parameter.getType()%>'/>
-				</html:select>
-				&nbsp;<html:errors property='<%="parameterValue["+parameter.getId()+"]"%>'/>
-			<% } %>
-			<logic:equal name="parameter" property="type" value="double">
-				<html:text property='<%="parameterValue["+parameter.getId()+"]"%>' size="10" maxlength="10" disabled="<%=disabled || parameter.getDisabled()%>"/>
-  				&nbsp;<html:errors property='<%="parameterValue["+parameter.getId()+"]"%>'/>
-  			</logic:equal>
-			<logic:equal name="parameter" property="type" value="integer">
-				<html:text property='<%="parameterValue["+parameter.getId()+"]"%>' size="10" maxlength="10" disabled="<%=disabled || parameter.getDisabled()%>"/>
-  				&nbsp;<html:errors property='<%="parameterValue["+parameter.getId()+"]"%>'/>
-  			</logic:equal>
-			<logic:equal name="parameter" property="type" value="long">
-				<html:text property='<%="parameterValue["+parameter.getId()+"]"%>' size="10" maxlength="10" disabled="<%=disabled || parameter.getDisabled()%>"/>
-  				&nbsp;<html:errors property='<%="parameterValue["+parameter.getId()+"]"%>'/>
-  			</logic:equal>
-			<logic:equal name="parameter" property="type" value="text">
-				<html:text property='<%="parameterValue["+parameter.getId()+"]"%>' size="30" maxlength="100" disabled="<%=disabled || parameter.getDisabled()%>"/>
-  				&nbsp;<html:errors property='<%="parameterValue["+parameter.getId()+"]"%>'/>
-			</logic:equal>	
-			</TD>		
-		</TR>
-	</logic:iterate>
-	<logic:notEmpty name="owners" scope="request">
-		<bean:define id="owners" name="owners" scope="request" type="java.util.Collection"/>
-		<TR>
-			<TD valign="top">Owner:</TD>
-			<TD>
-				<html:select property="owner" disabled="<%=disabled%>" multiple="true" size='<%=""+Math.min(5,owners.size())%>'>
-					<html:optionsCollection name="owners" label="value" value="id"/>
-				</html:select>
-				&nbsp;<html:errors property="owner"/>
-			</TD>
-		</TR>
-	</logic:notEmpty>
-	<logic:empty name="owners" scope="request">
-		<html:hidden property="owner"/>
-	</logic:empty>
+--%>
+		<%  
+		boolean disabled = (solver!=null && solver.isWorking());
+		%>
+		   	<TR><TD>Solver configuration:</TD>
+				<TD>
+					<html:select property="setting" onchange="submit();" disabled="<%=disabled%>">
+						<html:optionsCollection name="solverForm" property="settings" label="value" value="id"/>
+					</html:select>
+					&nbsp;<html:errors property="setting"/>
+				</TD>
+			</TR>
+		<logic:iterate id="parameter" name="solverForm" property="parameters"
+			type="org.unitime.timetable.model.SolverPredefinedSetting.IdValue">
+			<TR>
+				<TD><bean:write name="parameter" property="value" />:</TD>
+				<!-- 각 항목명  부르기 -->
+				<TD><logic:equal name="parameter" property="type"
+						value="boolean">
+						<!-- checkbox해당부분 -->
+						<html:checkbox
+							property='<%= "parameterValue["+parameter.getId()+"]"%>'
+							disabled="<%=disabled || parameter.getDisabled()%>" />
+  				&nbsp;<html:errors
+							property='<%= "parameterValue["+parameter.getId()+"]"%>' />
+					</logic:equal> <% if (parameter.getType().startsWith("enum(") && parameter.getType().endsWith(")")) { %>
+					<html:select
+						property='<%="parameterValue["+parameter.getId()+"]"%>'
+						disabled="<%=disabled || parameter.getDisabled()%>">
+						<!-- 입력필드 값  -->
+						<html:options property='<%=parameter.getType()%>'
+							 />
+					</html:select> &nbsp;<html:errors
+						property='<%="parameterValue["+parameter.getId()+"]"%>' /> <% } %>
+					<logic:equal name="parameter" property="type" value="double">
+						<html:text property='<%="parameterValue["+parameter.getId()+"]"%>'
+							size="10" maxlength="10"
+							disabled="<%=disabled || parameter.getDisabled()%>" />
+  				&nbsp;<html:errors
+							property='<%="parameterValue["+parameter.getId()+"]"%>' />
+					</logic:equal> <logic:equal name="parameter" property="type" value="integer">
+						<html:text property='<%="parameterValue["+parameter.getId()+"]"%>'
+							size="10" maxlength="10"
+							disabled="<%=disabled || parameter.getDisabled()%>" />
+  				&nbsp;<html:errors
+							property='<%="parameterValue["+parameter.getId()+"]"%>' />
+					</logic:equal> <logic:equal name="parameter" property="type" value="long">
+						<html:text property='<%="parameterValue["+parameter.getId()+"]"%>'
+							size="10" maxlength="10"
+							disabled="<%=disabled || parameter.getDisabled()%>" />
+  				&nbsp;<html:errors
+							property='<%="parameterValue["+parameter.getId()+"]"%>' />
+					</logic:equal> <logic:equal name="parameter" property="type" value="text">
+						<html:text property='<%="parameterValue["+parameter.getId()+"]"%>'
+							size="30" maxlength="100"
+							disabled="<%=disabled || parameter.getDisabled()%>" />
+  				&nbsp;<html:errors
+							property='<%="parameterValue["+parameter.getId()+"]"%>' />
+					</logic:equal></TD>
+			</TR>
+		</logic:iterate>
+		<logic:notEmpty name="owners" scope="request">
+			<bean:define id="owners" name="owners" scope="request"
+				type="java.util.Collection" />
+			<TR>
+				<TD valign="top">전공 선택:</TD>
+				<TD><html:select property="owner" disabled="<%=disabled%>"
+						multiple="true" size='<%=""+Math.min(5,owners.size())%>'>
+						<html:optionsCollection name="owners" label="value" value="id" />
+					</html:select> &nbsp;<html:errors property="owner" /></TD>
+			</TR>
+		</logic:notEmpty>
+		<logic:empty name="owners" scope="request">
+			<html:hidden property="owner" />
+		</logic:empty>
+		<!-- 
 	<logic:empty name="hosts" scope="request">
 		<html:hidden property="host"/>
 	</logic:empty>
@@ -205,33 +228,49 @@ try {
 				&nbsp;<html:errors property="host"/>
 			</TD>
 		</TR>
-	</logic:notEmpty>
-	<TR>
-		<TD align="right" colspan="2">
-<% if (solver==null) { %>
-			<html:submit onclick="displayLoading();" property="op" value="Load"/>
-<% }
-   if (solver==null || !solver.isWorking()) { %>
-			<html:submit onclick="displayLoading();" property="op" value="Start"/>
-<% }
-   if (solver!=null && solver.isRunning()) { %>
-			<html:submit onclick="displayLoading();" property="op" value="Stop"/>
-<% }
-   if (solver!=null && !solver.isWorking()) { %>
-		<% if (solver.hasFinalSectioning()) { %>   
-			<html:submit onclick="displayLoading();" property="op" value="Student Sectioning"/>
-		<% } %>
-			<html:submit onclick="displayLoading();" property="op" value="Reload Input Data"/>
-			<html:submit onclick="confirmUnload();displayLoading();" property="op" value="Unload"/>
-			<sec:authorize access="hasPermission(#solverForm.owner, 'SolverGroup', 'SolverSolutionExportCsv')">
-				<html:submit property="op" value="Export Solution"/>
-			</sec:authorize>
-<% } %>
-			<html:submit onclick="displayLoading();" property="op" accesskey="R" value="Refresh"/>
-		</TD>
-	</TR>
-</TABLE>
-<BR><BR>
+	</logic:notEmpty> -->
+
+		<TR>
+			<TD align="right" colspan="2">
+				<%
+					if (solver == null) {
+				%> <html:submit onclick="displayLoading();" property="op"
+					value="Load" /> <%
+ 	}
+ 			if (solver == null || !solver.isWorking()) {
+ %> <html:submit
+					onclick="displayLoading();" property="op" value="Start" /> <%
+ 	}
+ 			if (solver != null && solver.isRunning()) {
+ %>
+				<html:submit onclick="displayLoading();" property="op" value="Stop" />
+				<%
+					}
+							if (solver != null && !solver.isWorking()) {
+				%> <%
+ 	if (solver.hasFinalSectioning()) {
+ %>
+				<html:submit onclick="confirmSave();displayLoading();" property="op"
+					value="Save" /> <%
+ 	}
+ %> <html:submit onclick="displayLoading();"
+					property="op" value="Reload Input Data" /> <html:submit
+					onclick="confirmUnload();displayLoading();" property="op"
+					value="Unload" /> <sec:authorize
+					access="hasPermission(#solverForm.owner, 'SolverGroup', 'SolverSolutionExportCsv')">
+					<html:submit property="op" value="Export Solution" />
+				</sec:authorize> <%
+ 	}
+ %> <html:submit onclick="displayLoading();" property="op"
+					accesskey="R" value="Refresh" />
+			</TD>
+		</TR>
+	</TABLE>
+	<BR>
+	<BR>
+
+	<%--
+
 <TABLE width="100%" border="0" cellspacing="0" cellpadding="3">
 <%
 	if (solver==null) {
@@ -425,7 +464,9 @@ try {
 		if (tx!=null) tx.commit();
 	}
 %>
-	</TABLE>
+	</TABLE> 
+  --%>
+
 <%
 } catch (Exception e) {
 	e.printStackTrace();

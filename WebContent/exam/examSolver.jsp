@@ -18,7 +18,7 @@
  * 
 --%>
 <%@page import="java.text.DecimalFormat"%>
-<%@ page language="java" autoFlush="true"%>
+<%@ page language="java" autoFlush="true" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.*" %>
 <%@ page import="org.unitime.timetable.solver.WebSolver" %>
 <%@ page import="org.unitime.timetable.solver.exam.ExamSolverProxy" %>
@@ -41,10 +41,10 @@
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 
 <tt:back-mark back="true" clear="true" title="Examination Solver" uri="examSolver.do"/>
-<tt:confirm name="confirmUnload">Do you really want to unload your current timetable? You may lose this timetable if you did not save it.</tt:confirm>
-<tt:confirm name="confirmClear">Do you really want to clear your current timetable? You may lose this timetable if you did not save it.</tt:confirm>
-<tt:confirm name="confirmSave">Do you really want to save your current timetable? This will overwrite your previous solution.</tt:confirm>
-<tt:confirm name="confirmSaveAsNew">Do you really want to save your current timetable?</tt:confirm>
+<tt:confirm name="confirmUnload">당신의 현재 시간표를 언로드 하시겠습니까? 저장하지 않았다면 이를 잃을 수 있습니다.</tt:confirm>
+<tt:confirm name="confirmClear">당신의 현재 시간표를 clear하시겠습니까? 저장하지 않았다면 이를 잃을 수 있습니다.</tt:confirm>
+<tt:confirm name="confirmSave">당신의 현재 시간표를 저장하시겠습니까? 이전의 결과를 잃을 수 있습니다.</tt:confirm>
+<tt:confirm name="confirmSaveAsNew">당신의 현재 시간표를 저장하시겠습니까?</tt:confirm>
 <tiles:importAttribute />
 
 <html:form action="/examSolver">
@@ -75,25 +75,25 @@ try {
 	<TR>
 		<TD colspan="2">
 			<DIV class="WelcomeRowHead">
-			Solver
+			해당 학기 시험시간표 짜기
 			</DIV>
 		</TD>
 	</TR>
 <%
 	if (solver!=null && solver.getLoadedDate()!=null) {
 %>
-		<TR><TD>Input data loaded:</TD><TD><%=WebSolver.sDF.format(solver.getLoadedDate())%></TD></TR>
+		<TR><TD>데이터 로드 시간:</TD><TD><%=WebSolver.sDF.format(solver.getLoadedDate())%></TD></TR>
 <%
 	}
 %>
-	<TR><TD>Status:</TD><TD><%=status%> <tt:wiki>Solver Status</tt:wiki></TD></TR>
+	<TR><TD>현재 상태:</TD><TD><%=status%> <tt:wiki>Solver Status</tt:wiki></TD></TR>
 <%  if (progress!=null) { %>
 		<TR><TD>Progress:</TD><TD><%=progress%></TD></TR>
 <%  } %>
 <%  
 	boolean disabled = (solver!=null && solver.isWorking());
 %>
-   	<TR><TD>Examination problem:</TD>
+   	<TR><TD>시험종류 선택:</TD>
 		<TD>
 			<html:select property="examType" disabled="<%=solver!=null%>">
 				<html:options collection="examTypes" property="uniqueId" labelProperty="label"/>
@@ -149,6 +149,9 @@ try {
 	<logic:empty name="hosts" scope="request">
 		<html:hidden property="host"/>
 	</logic:empty>
+	
+	
+	<!--  
 	<logic:notEmpty name="hosts" scope="request">
 		<bean:define id="hosts" name="hosts" scope="request"/>
 	   	<TR><TD>Host:</TD>
@@ -160,6 +163,8 @@ try {
 			</TD>
 		</TR>
 	</logic:notEmpty>
+	
+	-->
 	<TR>
 		<TD align="right" colspan="2">
 <% if (solver==null) { %>
@@ -192,6 +197,9 @@ try {
 	</TR>
 </TABLE>
 <BR><BR>
+
+
+<%--
 <TABLE width="100%" border="0" cellspacing="0" cellpadding="3">
 <%
 	if (solver==null) {
@@ -295,6 +303,8 @@ try {
 	}
 %>
 	</TABLE>
+	
+	 --%>
 <%
 } catch (Exception e) {
 	e.printStackTrace();

@@ -17,7 +17,7 @@
  * limitations under the License.
  * 
 --%>
-<%@ page language="java" autoFlush="true"%>
+<%@ page language="java" autoFlush="true" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="org.unitime.timetable.webutil.timegrid.ExamGridTable" %>
 <%@ page import="org.unitime.commons.Debug" %>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
@@ -31,16 +31,17 @@
 <%
 try {
 %>
-	<script language="JavaScript">blToggleHeader('Filter','dispFilter');blStart('dispFilter');</script>
+
+<%--	<script language="JavaScript">blToggleHeader('Filter','dispFilter');blStart('dispFilter');</script>--%>
 	<TABLE width="100%" border="0" cellspacing="0" cellpadding="3">
-		<TR>
-			<TD width="10%" nowrap>Show classes/courses:</TD>
+		<%--<TR>
+			<TD width="10%" nowrap>강의 보기:</TD>
 			<TD>
 				<html:checkbox property="showSections"/>
 			</TD>
-		</TR>
+		</TR> --%>
 		<TR>
-  			<TD nowrap>Examination Problem:</TD>
+  			<TD nowrap>시험 종류 선택:</TD>
 			<TD>
 				<html:select property="examType" onchange="javascript: showDates(this.value);">
 					<html:options collection="examTypes" labelProperty="label" property="uniqueId"/>
@@ -55,26 +56,28 @@ try {
 				</html:select>
 			</TD>
 		</TR>
-		<TR>
+			<TR>
 			<TD>Filter:</TD>
 			<TD>
 				<html:text property="filter" maxlength="1000" size="40"/>
 			</TD>
 		</TR>
+		
 		<script>var rowToExamType = new Array();</script>
 		<logic:iterate scope="request" name="examTypes" id="et" indexId="idx">
 			<bean:define name="et" property="uniqueId" id="examType"/>
 			<script>rowToExamType[<%=idx%>] = <%=examType%>;</script>
 			<TR id='<%="daterow."+examType%>'>
-				<TD>Date:</TD>
+				<TD>기간 선택:</TD>
 				<TD>
 					<html:select property='<%="date("+examType+")"%>'>
 						<html:optionsCollection name="examGridForm" property='<%="dates("+examType+")"%>' label="label" value="value"/>
 					</html:select>
 				</TD>
 			</TR>
+			
 			<TR id='<%="timerow."+examType%>'>
-				<TD>Time:</TD>
+				<TD>시간 선택:</TD>
 				<TD>
 					<html:select property='<%="startTime("+examType+")"%>'>
 						<html:optionsCollection name="examGridForm" property='<%="startTimes("+examType+")"%>' label="label" value="value"/>
@@ -85,6 +88,7 @@ try {
 					</html:select>
 				</TD>
 			</TR>
+			 
 		</logic:iterate>
 		<script language="JavaScript" type="text/javascript">
 			function showDates(examType) {
@@ -104,7 +108,9 @@ try {
 				</html:select>
 			</TD>
 		</TR>
-		<TR>
+	
+		<%--
+		
 			<TD>Background:</TD>
 			<TD>
 				<html:select property="background">
@@ -126,6 +132,7 @@ try {
 				</html:select>
 			</TD>
 		</TR>
+		 --%>
 		<TR>
 			<TD colspan='2' align='right'>
 				<html:submit onclick="displayLoading();" property="op" value="Change"/>
@@ -152,7 +159,7 @@ try {
 			<TD colspan="2">
 				<tt:section-header>
 					<tt:section-title>
-						Examination Timetable
+						학기 시험 시간표
 					</tt:section-title>
 					<A class="l7" href="#legend">Legend</A>&nbsp;
 				</tt:section-header>
@@ -173,7 +180,6 @@ try {
 %>
 			</TABLE>
 <%
-
 				table.printToHtml(out);
 			}
 %>
@@ -187,7 +193,7 @@ try {
 					<tt:section-title>
 						Legend
 					</tt:section-title>
-					<A class="l7" href="#timetable">Examination Timetable</A>&nbsp;
+					<A class="l7" href="#timetable">학기 시험 시간표</A>&nbsp;
 				</tt:section-header>
 			</TD>
 		</TR>

@@ -72,7 +72,8 @@
 	<tt:offering-locks/>
   	
 <%
-	String sysMessage = ApplicationProperties.getProperty("tmtbl.system_message");
+	String sysMessage = "Welcome to the Program^^";
+	//String sysMessage = ApplicationProperties.getProperty("tmtbl.system_message");
 	boolean showBackground = (sysMessage == null || sysMessage.trim().isEmpty());
 	if ("cas-logout".equals(request.getParameter("op"))) {
 		sysMessage = "You have been successfully logged out of UniTime, click <a href='j_spring_cas_security_logout'>here</a> to log out of all other applications as well.";
@@ -179,8 +180,8 @@
 	<span id='UniTimeGWT:Content' <%=(!showBackground ? "class='unitime-MainContent'" : "class='unitime-MainContent unitime-MainLogo'")%>>
 		<% if (sysMessage != null && !sysMessage.trim().isEmpty()) { %>
 			<span class='messages'>
-				<div class='WelcomeRowHead'>System Messages</div>
-				<div class='message'><%= sysMessage %></div>
+				<div class='WelcomeRowHead' style="color:#ccffcc;">Welcome Messages</div>
+				<div class='message' style="color:#ccffcc;"><%= sysMessage %></div>
 			</span>
 		<% } %>
 		<tt:registration method="hasMessage">

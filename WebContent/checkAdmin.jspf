@@ -20,5 +20,5 @@
 <%@ page import="org.unitime.timetable.util.AccessDeniedException"%>
 <%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <sec:authorize access="!hasPermission(null, null, 'IsAdmin')">
-<% if (true) throw new AccessDeniedException("Insufficient user privileges.");%>
+<% if (true) throw new AccessDeniedException("충분하지 않은 사용자 권한입니다.");%>
 </sec:authorize>

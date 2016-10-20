@@ -23,9 +23,9 @@
 <%
 	if (!sessionContext.isAuthenticated()) {
 		if (sessionContext.isHttpSessionNew()) {
-			throw new AccessDeniedException("Your timetabling session has expired. Please log in again.");
+			throw new AccessDeniedException("당신의 timetabling 세션이 만료되었습니다. 다시 로그인하시기 바랍니다.");
 		} else {
-			throw new AccessDeniedException("Login is required to use timetabling application.");
+			throw new AccessDeniedException("로그인은 timetabling 프로그램을 사용하는 데 필요합니다.");
 		}
 	}
 %>
