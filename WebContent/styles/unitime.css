@@ -3482,7 +3482,7 @@ unitime-RoomSharingWidget .legend .blank {
 
 .unitime-PageMessage {
 	display: block;
-	padding: 2px 2px 2px 10px;
+	padding: 20px 2px 2px 10px;
 	width: 100%;
 	background: #dfe7f2;
 	border-bottom: 1px black solid;	
