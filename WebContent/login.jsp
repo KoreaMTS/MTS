@@ -50,9 +50,10 @@
 		page='<%=ApplicationProperties.getProperty("tmtbl.header.external")%>' />
 	<% } %>
 
+<%-- 
 	<tt:form-factor value="desktop">
 		<span id='UniTimeGWT:TopMenu' style="display: block; height: 23px;"></span>
-	</tt:form-factor>
+	</tt:form-factor>--%>
 
 	<%
 	String errorMsg = null;
@@ -70,6 +71,7 @@
 		errorMsg = (String)request.getParameter("m");
 	}
  %>
+
 	<FORM name="f" action="<c:url value='j_spring_security_check'/>"
 		method="POST">
 		<INPUT type="hidden" name="cs" value="login"> <INPUT
@@ -80,11 +82,11 @@
 
 		<span class='unitime-Login'> <span class='menu'><span
 				id='UniTimeGWT:MobileMenu'></span></span> <span class='logo'><img
-				src="images/unitime.png" border="0" alt="UniTime" width="200px;"></span>
+				src="images/unitime.png" border="0" alt="UniTime" ></span>
 			<span class='header'>
-				<div class='h1' style="color: red; font-weight: bold;">대학교 전공별
+				<div class='h1' style="color:#FF9999; font-weight: bold;">대학교 전공별
 					시간표 정하기</div>
-				<div class='h2'>Comprehensive Academic Scheduling Solutions</div>
+				<div class='h2'>Majors Timetable Scheduling</div>
 		</span> <% if (errorMsg!=null)  { %><div class='error'><%= errorMsg %></div>
 			<% } %> <c:if
 				test="${not empty SPRING_SECURITY_LAST_EXCEPTION.message}">

@@ -17,7 +17,7 @@
  * limitations under the License.
  * 
 --%>
-<%@ page language="java" autoFlush="true"%>
+<%@ page language="java" autoFlush="true" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="org.unitime.timetable.webutil.timegrid.TimetableGridTable" %>
 <%@ page import="org.unitime.commons.Debug" %>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
@@ -166,14 +166,14 @@ try {
 					<tt:section-title>
 						Timetable
 					</tt:section-title>
-					<A class="l7" href="#legend">Legend</A>&nbsp;
+				<!-- <A class="l7" href="#legend">Legend</A>&nbsp; -->
 				</tt:section-header>
 			</TD>
 		</TR>
-		<logic:equal name="timetableForm" property="loaded" value="false">
+				<logic:equal name="timetableForm" property="loaded" value="false">
 				<TR>
 					<TD>
-						<i>Neither a solver is started nor solution is selected.</i>
+						<i>solver가 시작되지 않았고 솔루션이 선택되지 않았습니다.</i>
 					</TD>
 				</TR>
 		</logic:equal>
@@ -184,7 +184,7 @@ try {
 %>
 				<TR>
 					<TD>
-						<i>No resource matches the above criteria (or there is no resource at all).</i>
+						<i>Resource가 없거나 위의 기준과 만족되는 것이 없습니다.</i>
 					</TD>
 				</TR>
 			</TABLE>
@@ -209,7 +209,6 @@ try {
 		}
 	</script>
 <%
-
 				table.printToHtml(out);
 			}
 %>

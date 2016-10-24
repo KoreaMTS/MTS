@@ -72,7 +72,7 @@
 	<tt:offering-locks/>
   	
 <%
-	String sysMessage = "Welcome to the Program^^";
+	String sysMessage = "MTS프로그램을 이용해주셔서 감사합니다.";
 	//String sysMessage = ApplicationProperties.getProperty("tmtbl.system_message");
 	boolean showBackground = (sysMessage == null || sysMessage.trim().isEmpty());
 	if ("cas-logout".equals(request.getParameter("op"))) {
@@ -86,7 +86,7 @@
 
 <tt:form-factor value="mobile">
 	<span class="unitime-MobilePage">
-	<span class='body' style="display:block;background-image:url('images/logofaded.jpg');backbackground-repeat:no-repeat;background-position: center; margin-bottom: -10px;">
+	<span class='body' style="display:block;backbackground-repeat:no-repeat;background-position: center; margin-bottom: -10px;">
 	<span class="unitime-MobilePageHeader">
 		<span class="row">
 			<span id='UniTimeGWT:MobileMenu' class="menu"></span>
@@ -170,9 +170,9 @@
     <span class='main'><span class='body' id="unitime-Page" style="background-image:url('images/logofaded.jpg');backbackground-repeat:no-repeat;background-position: center;">
     	<span class="unitime-PageHeader" id="unitime-Header">
     		<span class="row">
-    			<span class="logo"><a href='http://www.unitime.org' tabIndex="-1"><img src="images/unitime.png" border="0" width=140; height=80;/></a></span>
+    			<span class="logo"><a href='http://www.unitime.org' tabIndex="-1"><img src="images/unitime.png" border="0" /></a></span>
     			<span class="content">
-					<span id='UniTimeGWT:Title' class="title">Majors Timetable Scheduling</span>
+					<span class='unitime-loginPageHeader' class="title">Majors Timetable Scheduling</span>
 					<span class='unitime-Header'><span id='UniTimeGWT:Header' class="unitime-InfoPanel"></span></span>
 				</span>
 			</span>
@@ -180,8 +180,8 @@
 	<span id='UniTimeGWT:Content' <%=(!showBackground ? "class='unitime-MainContent'" : "class='unitime-MainContent unitime-MainLogo'")%>>
 		<% if (sysMessage != null && !sysMessage.trim().isEmpty()) { %>
 			<span class='messages'>
-				<div class='WelcomeRowHead' style="color:#ccffcc;">Welcome Messages</div>
-				<div class='message' style="color:#ccffcc;"><%= sysMessage %></div>
+				<div class='WelcomeRowHead' style="color:#003366; font-size: 30px;">Welcome to the MTS program</div>
+				<div class='message' style="color:#FFFFFF;"><%= sysMessage %></div>
 			</span>
 		<% } %>
 		<tt:registration method="hasMessage">

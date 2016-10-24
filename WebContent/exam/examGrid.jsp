@@ -56,13 +56,12 @@ try {
 				</html:select>
 			</TD>
 		</TR>
-			<TR>
+		<TR>
 			<TD>Filter:</TD>
 			<TD>
 				<html:text property="filter" maxlength="1000" size="40"/>
 			</TD>
 		</TR>
-		
 		<script>var rowToExamType = new Array();</script>
 		<logic:iterate scope="request" name="examTypes" id="et" indexId="idx">
 			<bean:define name="et" property="uniqueId" id="examType"/>
@@ -110,6 +109,7 @@ try {
 		</TR>
 	
 		<%--
+
 		
 			<TD>Background:</TD>
 			<TD>

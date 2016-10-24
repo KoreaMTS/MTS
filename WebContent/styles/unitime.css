@@ -19,7 +19,7 @@
 */
 
 .unitime-Body {
-	font-family: sans-serif, verdana, arial;
+	font-family: Tahoma, verdana, arial;
 	background-color: #FFFFFF;
 }
 
@@ -27,7 +27,8 @@
 	display: table;
 	margin-left: auto;
 	margin-right: auto;
-	min-width: 800px;
+	min-width: 1000px;
+	padding-top: 30px;
 }
 
 .unitime-Page .row {
@@ -46,7 +47,7 @@
 
 .unitime-Page .body {
 	display: block;
-	border: 1px solid #9CB0CE;
+	border: 0px solid #FF9999;
 	margin-top: 5px;
 	background-color: #FFFFFF;
 	vertical-align: center;
@@ -1331,7 +1332,7 @@ A.unitime-Hint:link,A.unitime-Hint:visited,A.unitime-Hint:active,A.unitime-Hint:
 	font-family: sans-serif, verdana, arial;
 	padding-top: 5px;
 	font-weight: bold;
-	color: #666666;
+	color: #003366;
 	background-image: linear-gradient(bottom, #e3e8f3 0%, #fbfcfd 100%);
 	background-image: -o-linear-gradient(bottom, #e3e8f3 0%, #fbfcfd 100%);
 	background-image: -moz-linear-gradient(bottom, #e3e8f3 0%, #fbfcfd 100%);
@@ -1348,14 +1349,14 @@ A.unitime-Hint:link,A.unitime-Hint:visited,A.unitime-Hint:active,A.unitime-Hint:
 	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#fbfcfd', EndColorStr='#e3e8f3')";
 	background-color: #e3e8f3;
   	cursor: pointer;
-  	border-bottom: 1px dashed #9CB0CE;
+  	border-bottom: 1px dashed #FF9999;
 }
 
 .unitime-ClickableTableHeaderNoBorderLine {
 	font-family: sans-serif, verdana, arial;
 	padding-top: 5px;
 	font-weight: bold;
-	color: #666666;
+	color: #003366;
 	background-image: linear-gradient(bottom, #e3e8f3 0%, #fbfcfd 100%);
 	background-image: -o-linear-gradient(bottom, #e3e8f3 0%, #fbfcfd 100%);
 	background-image: -moz-linear-gradient(bottom, #e3e8f3 0%, #fbfcfd 100%);
@@ -3419,6 +3420,7 @@ unitime-RoomSharingWidget .legend .blank {
 .unitime-InfoPanel {
 	display: inline-table;
 	height: 28px;
+	color: #003366;
 }
 
 .unitime-InfoPanel .row {
@@ -3452,9 +3454,9 @@ unitime-RoomSharingWidget .legend .blank {
 
 .unitime-InfoPanel .hint {
 	display: block;
-	font-size: xx-small;
+	font-size: small;
 	font-style: italic;
-	color: #9CB0CE;
+	color: #FF9999;
 	text-align: right;
 	margin-top: -2px;
 	white-space: nowrap;
@@ -3506,7 +3508,8 @@ unitime-RoomSharingWidget .legend .blank {
 
 .unitime-PageHeader .logo {
 	display: table-cell;
-	padding: 5px;
+	padding: 10px;
+    transform: rotate(5deg);
 }
 
 .unitime-PageHeader .content {
@@ -3521,8 +3524,9 @@ unitime-RoomSharingWidget .legend .blank {
 	text-align: right;
 	white-space: nowrap;
 	font-size: x-large;
-	color: #333333;
+	color:#FF9999;
 	margin-bottom: 10px;
+	font-weight:bold;
 }
 
 .unitime-PageHeader .title .text {
@@ -3559,14 +3563,26 @@ unitime-RoomSharingWidget .legend .blank {
 }
 
 .unitime-Header {
+	font-size: small;
 	display: block;	
 	text-align: right;
+	font-style: Tahoma;
+	color: #003366;
 }
 
 .unitime-Login {
-	margin: 20px 5px 20px 5px;
+	margin: 100px 5px 100px 5px;
 	display: block;
 	text-align: center;
+}
+.unitime-loginPageHeader{
+	display: block;
+	text-align: right;
+	white-space: nowrap;
+	font-size: x-large;
+	color:#ffe8f1;
+	margin-bottom: 10px;
+	font-weight:bold;
 }
 
 .unitime-Login .header {
@@ -3595,6 +3611,8 @@ unitime-RoomSharingWidget .legend .blank {
 .unitime-Login .logo {
 	display: inline-block;
 	vertical-align: top;
+    transform: rotate(5deg);
+    padding: 0px 0px 10px 0px;
 }
 
 .unitime-Login .login {
@@ -3639,6 +3657,7 @@ unitime-RoomSharingWidget .legend .blank {
 .unitime-MainContent .messages {
 	display: block;
 	padding: 5px;
+	width:985px;
 }
 
 .unitime-MainContent .message {

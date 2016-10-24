@@ -383,12 +383,12 @@ input[type="button"][disabled]:hover {
 }
 
 body, table td, select {
-  font-family: Arial Unicode MS, Arial, sans-serif;
+  font-family: sans-serif, verdana, arial;
   font-size: small;
 }
 
 select {
-	border: 1px solid #9CB0CE;
+	border: 1px solid #003366;
 }
 
 A.menuLink:hover {
@@ -708,7 +708,7 @@ A.submenuLink {
 }
 
 .BottomBorder {
-	border-bottom: 1px solid #9CB0CE;
+	border-bottom: 1px solid #FF9999;
 }
 
 .BottomBorderGray {
@@ -727,22 +727,22 @@ A.submenuLink {
 }
 
 .WelcomeRowHead {
-	color: #35526F;
+	color: #003366;
 	font-weight: bold;
-	font-size: medium;
+	font-size: Large;
 	font-family: sans-serif, verdana, arial;
-	border-bottom: 1px solid #9CB0CE;
+	border-bottom: 2px solid #FF9999; 
 }
 
 .WelcomeRowHeadNoLine {
-	color: #35526F;
+	color: #003366;
 	font-weight: bold;
 	font-size: medium;
 	font-family: sans-serif, verdana, arial;
 }
 
 .WelcomeRowHeadBlank {
-	color: #35526F;
+	color: #003366;
 	font-weight: bold;
 	font-size: medium;
 	font-family: sans-serif, verdana, arial;
@@ -764,24 +764,24 @@ A.submenuLink {
 .WebTableHeader {
 	padding-top: 5px;
 	font-weight: bold;
-	color: #666666;
+	color: #003366;
   	background: #e3e8f3 url(../images/header.png) repeat-x left top;
-  	border-bottom: 1px dashed #9CB0CE;
+  	border-bottom: 1px dashed #FF9999;
 }
 
 .WebTableHeaderFirstRow {
 	padding-top: 5px;
 	font-weight: bold;
-	color: #666666;
+	color: #003366;
   	background: #e3e8f3 url(../images/header.png) repeat-x left top;
 }
 
 .WebTableHeaderSecondRow {
 	padding-top: 5px;
 	font-weight: bold;
-	color: #666666;
+	color: #003366;
   	background-color: #e3e8f3;
-  	border-bottom: 1px dashed #9CB0CE;
+  	border-bottom: 1px dashed #FF9999;
 }
 
 .ReservationRowHead {
