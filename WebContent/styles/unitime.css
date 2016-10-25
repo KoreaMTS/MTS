@@ -262,7 +262,7 @@ h1 {
 }
 
 .unitime-MainTableHeader {
-	border-bottom: 1px solid #9CB0CE;
+	/*border-bottom: 1px solid #9CB0CE;*/
 	padding-top: 5px;
 	font-size: large;
 	font-weight: bold;
@@ -279,7 +279,7 @@ h1 {
 }
 
 .unitime-MainTableHeaderNote {
-	border-bottom: 1px solid #9CB0CE;
+	border-bottom: 1px solid #ff8ef1;
 	font-size: small;
 	font-weight: normal;
 	font-style: italic;
@@ -375,7 +375,7 @@ h1 {
 }
 
 .unitime-TableRowSelected {
-	background-color: #92c1f0;
+	background-color: #ffe8f1;
 }
 
 .unitime-TableRowProblem {
@@ -383,11 +383,11 @@ h1 {
 }
 
 .unitime-TableRowSelectedHover {
-	background-color: #92c1f0;
+	background-color: #ffe8f1;
 }
 
 .unitime-TableRowHover {
-	background-color: #d0e4f6;
+	background-color: #ffe8f1;
 }
 
 .unitime-ScrollPanel {
@@ -1350,6 +1350,7 @@ A.unitime-Hint:link,A.unitime-Hint:visited,A.unitime-Hint:active,A.unitime-Hint:
 	background-color: #e3e8f3;
   	cursor: pointer;
   	border-bottom: 1px dashed #FF9999;
+  	border-top: 1px solid #FF9999;
 }
 
 .unitime-ClickableTableHeaderNoBorderLine {
@@ -1571,7 +1572,7 @@ A.unitime-Hint:link,A.unitime-Hint:visited,A.unitime-Hint:active,A.unitime-Hint:
 }
 
 .unitime-NotPrintableBottomLine {
-	border-bottom: 1px solid #9CB0CE;
+	border-bottom: 1px solid #ff9999;
 }
 
 .unitime-NotPrintableTopLine {

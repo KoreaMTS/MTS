@@ -196,7 +196,7 @@ try {
 		function mOvr(assignmentId) {
 			var x = document.getElementsByName('c'+assignmentId);
 			for (var i = 0; i < x.length; i++)
-				x[i].style.backgroundColor='rgb(223,231,242)';
+				x[i].style.backgroundColor='#ffe8f1';
 		}
 		function mOut(assignmentId, bgColor) {
 			var x = document.getElementsByName('c'+assignmentId);

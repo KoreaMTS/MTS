@@ -313,7 +313,7 @@ function calGetMonth(name, year, month, monthIdx, highlight, textColors, editabl
 function calGenPreference(name, pref, title, editable) {
 	if (editable && pref!='@')
 		document.writeln("<tr align=left "+
-			"onmouseover=\"this.style.backgroundColor='rgb(223,231,242)';this.style.cursor='pointer';\" "+
+			"onmouseover=\"this.style.backgroundColor='#ffe8f1';this.style.cursor='pointer';\" "+
 			"onclick=\"calPrefSelected('"+name+"', '"+pref+"');\" "+
 			"onmouseout=\"this.style.backgroundColor='rgb(255,255,255)';\">"+
 			"<td id='"+name+"_pref"+pref+"' width='30' height='20' "+

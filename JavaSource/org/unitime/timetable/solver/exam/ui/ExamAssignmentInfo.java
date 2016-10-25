@@ -1166,9 +1166,9 @@ public class ExamAssignmentInfo extends ExamAssignment implements Serializable  
         public String toString(boolean links) {
             String ret = "";
             if (links && getOtherExam()!=null)
-                ret += "<tr onmouseover=\"this.style.backgroundColor='rgb(223,231,242)';this.style.cursor='hand';this.style.cursor='pointer';\" onmouseout=\"this.style.backgroundColor='transparent';\" onclick=\"document.location='examInfo.do?examId="+getOtherExam().getExamId()+"&op=Select&noCacheTS=" + new Date().getTime()+"';\">";
+                ret += "<tr onmouseover=\"this.style.backgroundColor='#ffe8f1';this.style.cursor='hand';this.style.cursor='pointer';\" onmouseout=\"this.style.backgroundColor='transparent';\" onclick=\"document.location='examInfo.do?examId="+getOtherExam().getExamId()+"&op=Select&noCacheTS=" + new Date().getTime()+"';\">";
             else
-                ret += "<tr onmouseover=\"this.style.backgroundColor='rgb(223,231,242)';\" onmouseout=\"this.style.backgroundColor='transparent';\">";
+                ret += "<tr onmouseover=\"this.style.backgroundColor='#ffe8f1';\" onmouseout=\"this.style.backgroundColor='transparent';\">";
             ret += "<td style='font-weight:bold;color:"+PreferenceLevel.prolog2color("P")+";'>";
             ret += String.valueOf(getNrStudents());
             ret += "</td>";

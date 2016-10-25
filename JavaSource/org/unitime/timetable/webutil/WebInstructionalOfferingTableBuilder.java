@@ -104,8 +104,8 @@ public class WebInstructionalOfferingTableBuilder {
 	protected static int indent = 20;
     protected static String oddRowBGColor = "#f1f3f9";
     protected static String oddRowBGColorChild = "#EFEFEF";
-    protected static String oddRowMouseOverBGColor = "#8EACD0";
-    protected static String evenRowMouseOverBGColor = "#8EACD0";
+    protected static String oddRowMouseOverBGColor = "#FFE8F1";
+    protected static String evenRowMouseOverBGColor = "#FFE8F1";
     protected String disabledColor = "gray";
     protected static String formName = "instructionalOfferingListForm";
     

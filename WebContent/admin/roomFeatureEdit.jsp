@@ -168,7 +168,7 @@
 				<td class="WebTableHeader">Other Room Features</td>
 			</tr>
 			<logic:iterate name="<%=frmName%>" property="assignedRooms" id="room" indexId="ctr" type="org.unitime.timetable.model.Location">
-				<tr valign="top" onmouseover="this.style.backgroundColor='rgb(223,231,242)';" onmouseout="this.style.backgroundColor='transparent';">
+				<tr valign="top" onmouseover="this.style.backgroundColor='#ffe8f1';" onmouseout="this.style.backgroundColor='transparent';">
 					<td nowrap>
 						<html:multibox property="assignedSelected">
 							<bean:write name="room" property="uniqueId"/>

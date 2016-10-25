@@ -362,13 +362,13 @@ public class ExamGridTable {
         if (iForm.getResource()==sResourceRoom) {
             for (ExamRoomInfo room : info.getRooms()) {
                 Long roomId = room.getLocationId();
-                onMouseOver.append("if (document.getElementById('"+info.getExamId()+"."+roomId+"')!=null) document.getElementById('"+info.getExamId()+"."+roomId+"').style.backgroundColor='rgb(223,231,242)';");
+                onMouseOver.append("if (document.getElementById('"+info.getExamId()+"."+roomId+"')!=null) document.getElementById('"+info.getExamId()+"."+roomId+"').style.backgroundColor='#ffe8f1';");
                 onMouseOut.append("if (document.getElementById('"+info.getExamId()+"."+roomId+"')!=null) document.getElementById('"+info.getExamId()+"."+roomId+"').style.backgroundColor='"+(bgColor==null?"transparent":bgColor)+"';");
             }
         } else if (iForm.getResource()==sResourceInstructor) {
             for (Enumeration e=info.getInstructors().elements();e.hasMoreElements();) {
                 Long instructorId = ((ExamInstructorInfo)e.nextElement()).getId();
-                onMouseOver.append("if (document.getElementById('"+info.getExamId()+"."+instructorId+"')!=null) document.getElementById('"+info.getExamId()+"."+instructorId+"').style.backgroundColor='rgb(223,231,242)';");
+                onMouseOver.append("if (document.getElementById('"+info.getExamId()+"."+instructorId+"')!=null) document.getElementById('"+info.getExamId()+"."+instructorId+"').style.backgroundColor='#ffe8f1';");
                 onMouseOut.append("if (document.getElementById('"+info.getExamId()+"."+instructorId+"')!=null) document.getElementById('"+info.getExamId()+"."+instructorId+"').style.backgroundColor='"+(bgColor==null?"transparent":bgColor)+"';");
             }
         } else {

@@ -229,7 +229,7 @@
 			<TD>
 				<table align="left" border="0" cellspacing="0" cellpadding="0">
 							<logic:iterate name="<%=frmName%>" property="subtotalValues" id="v" indexId="ctr">
-								<tr onmouseover="this.style.backgroundColor='rgb(223,231,242)';this.style.cursor='default';" onmouseout="this.style.backgroundColor='transparent';"> 
+								<tr onmouseover="this.style.backgroundColor='#ffe8f1';this.style.cursor='default';" onmouseout="this.style.backgroundColor='transparent';"> 
 									<td valign="top" align="right" nowrap>
 										<html:hidden property='<%= "subtotalLabels[" + ctr + "]" %>'/>
 										<html:hidden property='<%= "subtotalValues[" + ctr + "]" %>'/>

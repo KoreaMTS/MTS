@@ -346,7 +346,7 @@ public class WebTable {
             sb.append((anchor ? onClick : "") + "<tr valign='top' "
                     + (onClick == null || anchor ? "" : onClick)
                     + (lineStyle == null ? "" : " style='" + lineStyle + "'")
-                    + (!suppressRowHighlight ? " onmouseover=\"this.style.backgroundColor='rgb(223,231,242)';" : "") 
+                    + (!suppressRowHighlight ? " onmouseover=\"this.style.backgroundColor='#ffe8f1';" : "") 
                     + "this.style.cursor='"
                     + (onClick == null ? "default" : "hand") 
                     + (onClick != null ? "';this.style.cursor='pointer" : "")

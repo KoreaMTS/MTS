@@ -295,7 +295,7 @@
 					<table cellspacing="0" cellpadding="3">
 						<tr><td width='250'><i><loc:message name="columnInstructorName"/></i></td><td width='80'><i><loc:message name="columnInstructorShare"/></i></td><td width='100'><i><loc:message name="columnInstructorCheckConflicts"/></i></td></tr>
 						<logic:iterate name="<%=frmName%>" property="instructors" id="instructor" indexId="ctr">
-							<tr onmouseover="this.style.backgroundColor='rgb(223,231,242)';this.style.cursor='hand';this.style.cursor='pointer';" 
+							<tr onmouseover="this.style.backgroundColor='#ffe8f1';this.style.cursor='hand';this.style.cursor='pointer';" 
 								onmouseout="this.style.backgroundColor='transparent';"
 								onClick="document.location='instructorDetail.do?instructorId=<%=instructor%>';"
 							>

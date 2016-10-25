@@ -187,7 +187,7 @@
 					</TR>
 
 					<logic:iterate name="<%=frmName%>" property="classIds" id="c" indexId="ctr">
-						<TR onmouseover="this.style.backgroundColor='rgb(223,231,242)';this.style.cursor='default';" onmouseout="this.style.backgroundColor='transparent';">
+						<TR onmouseover="this.style.backgroundColor='#ffe8f1';this.style.cursor='default';" onmouseout="this.style.backgroundColor='transparent';">
 							<TD nowrap valign="top">
 								<html:hidden property='<%= "classIds[" + ctr + "]" %>'/>
 								<html:hidden property='<%= "classLabels[" + ctr + "]" %>'/>
